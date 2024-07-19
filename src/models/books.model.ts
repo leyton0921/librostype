@@ -41,3 +41,21 @@ export interface BodyResponseGetId{
     message: string,
     data: Record<string,string>
 }
+
+export interface BodyRequestUpdateBook{
+    tittle :string;
+    author: string,
+    description: string,
+    summary: string,
+    publicationDate: string
+}
+
+export interface BodyResponseUpdateBook{
+    message:string,
+    data: Record<string,string>
+}
+
+export interface BodyResponseDeleteBook{
+    message:string,
+    data: null
+}
