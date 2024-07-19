@@ -19,7 +19,7 @@ export class UserController {
             };
             const headers = {
                 'accept': '*/*',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             };
             const reqOptions = {
                 method: 'POST',

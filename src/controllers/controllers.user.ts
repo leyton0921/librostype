@@ -17,7 +17,8 @@ export class UserController{
 
         const headers:Record<string,string> = {
             'accept': '*/*' ,
-            'Content-Type': 'application/json' 
+            'Content-Type': 'application/json' ,
+            
         };
 
         const reqOptions: RequestInit = {
