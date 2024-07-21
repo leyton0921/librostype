@@ -11,15 +11,14 @@ export class BooksController {
     constructor(domain) {
         this.domain = domain;
     }
-    allbooks(token, limit, page) {
+    allBooks(token, limit, page) {
         return __awaiter(this, void 0, void 0, function* () {
             const headers = {
-                'accept': '*/*',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                "accept": "*/*",
+                "Authorization": `Bearer ${token}`
             };
             const reqOptions = {
-                method: 'GET',
+                method: "GET",
                 headers: headers
             };
             const response = yield fetch(`${this.domain}/api/v1/books?limit=${limit}&page=${page}`, reqOptions);
@@ -31,19 +30,19 @@ export class BooksController {
             return responseBodyGetAllBooks;
         });
     }
-    create(tittle, author, description, summary, publicationDate, token) {
+    create(title, author, description, summary, publicationDate, token) {
         return __awaiter(this, void 0, void 0, function* () {
             const newBook = {
-                tittle: tittle.value,
+                title: title.value,
                 author: author.value,
                 description: description.value,
                 summary: summary.value,
                 publicationDate: publicationDate.value
             };
             const headers = {
-                'accept': '*/*',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                "accept": "*/*",
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             };
             const reqOptions = {
                 method: "POST",
@@ -61,11 +60,11 @@ export class BooksController {
     getById(id, token) {
         return __awaiter(this, void 0, void 0, function* () {
             const headers = {
-                'accept': '*/*',
-                'Authorization': `Bearer ${token}`
+                "accept": "*/*",
+                "Authorization": `Bearer ${token}`
             };
             const reqOptions = {
-                method: 'GET',
+                method: "GET",
                 headers: headers
             };
             const response = yield fetch(`${this.domain}/api/v1/books/${id}`, reqOptions);
@@ -76,26 +75,26 @@ export class BooksController {
             return responseBodyGetById;
         });
     }
-    update(idCatche, title, author, description, summary, publicationDate, token) {
+    update(idCache, title, author, description, summary, publicationDate, token) {
         return __awaiter(this, void 0, void 0, function* () {
             const updateBook = {
-                tittle: title.value,
+                title: title.value,
                 author: author.value,
                 description: description.value,
                 summary: summary.value,
                 publicationDate: publicationDate.value
             };
             const headers = {
-                'accept': '*/*',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                "accept": "*/*",
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             };
             const reqOptions = {
-                method: 'PATCH',
+                method: "PATCH",
                 headers: headers,
                 body: JSON.stringify(updateBook)
             };
-            const response = yield fetch(`${this.domain}/api/v1/books/${idCatche}`, reqOptions);
+            const response = yield fetch(`${this.domain}/api/v1/books/${idCache}`, reqOptions);
             if (!response.ok) {
                 throw new Error(`Error al obtener libros: ${response.status}: ${response.statusText} `);
             }
@@ -107,8 +106,8 @@ export class BooksController {
     deleteBook(id, token) {
         return __awaiter(this, void 0, void 0, function* () {
             const headers = {
-                'accept': '*/*',
-                'Authorization': `Bearer ${token}`
+                "accept": "*/*",
+                "Authorization": `Bearer ${token}`
             };
             const reqOptions = {
                 method: "DELETE",

@@ -9,7 +9,7 @@ export interface Datum {
     author:      string;
     description:  string;
     summary:     string;
-    publicationDate: Date;
+    publicationDate: string;
     createBy: string;
     updatedBy: null;
     deletedBy: null;
@@ -25,7 +25,7 @@ export enum Role {
 }
 
 export interface BodyRequesteCreateBook{
-    tittle :string;
+    title :string;
     author: string,
     description: string,
     summary: string,
@@ -43,7 +43,7 @@ export interface BodyResponseGetId{
 }
 
 export interface BodyRequestUpdateBook{
-    tittle :string;
+    title :string;
     author: string,
     description: string,
     summary: string,
